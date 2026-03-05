@@ -9,7 +9,8 @@ public class MovimentoMapper {
         MovimentoDto dto = new MovimentoDto();
         dto.setId(entity.getId());
         dto.setNome(entity.getNome());
-        dto.setUnidadeMedida(entity.getUnidadeMedida());
+        dto.setDescricao(entity.getDescricao());
+        dto.setTipo(entity.getTipo());
         return dto;
     }
 
@@ -20,7 +21,8 @@ public class MovimentoMapper {
         Movimento entity = new Movimento();
         entity.setId(dto.getId());
         entity.setNome(dto.getNome());
-        entity.setUnidadeMedida(dto.getUnidadeMedida());
+        entity.setDescricao(dto.getDescricao());
+        entity.setTipo(dto.getTipo());
         return entity;
     }
 

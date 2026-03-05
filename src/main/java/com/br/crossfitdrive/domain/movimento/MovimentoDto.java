@@ -7,6 +7,7 @@ public class MovimentoDto {
 
     private Long id;
     private String nome;
-    private UnidadeMedida unidadeMedida;
+    private String descricao;
+    private String tipo;
 
 }

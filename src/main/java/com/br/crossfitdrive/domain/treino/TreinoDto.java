@@ -8,8 +8,11 @@ import java.time.OffsetDateTime;
 public class TreinoDto {
 
     private Long id;
+    private String nome;
+    private String tipo;
     private OffsetDateTime data;
-    private Integer repeticao;
+    private Integer repeticaoEstimada;
+    private Integer repeticaoFeita;
     private Integer tempoEstimado;
     private Integer tempoFeito;
     private String observacao;

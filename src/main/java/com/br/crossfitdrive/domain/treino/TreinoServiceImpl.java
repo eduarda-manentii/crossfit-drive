@@ -33,7 +33,10 @@ public class TreinoServiceImpl implements TreinoService {
     public Treino atualizar(Long id, Treino treino) {
         Treino existente = buscarPorId(id);
         existente.setData(treino.getData());
-        existente.setRepeticao(treino.getRepeticao());
+        existente.setNome(treino.getNome());
+        existente.setTipo(treino.getTipo());
+        existente.setRepeticaoFeita(treino.getRepeticaoFeita());
+        existente.setRepeticaoEstimada(treino.getRepeticaoEstimada());
         existente.setTempoEstimado(treino.getTempoEstimado());
         existente.setTempoFeito(treino.getTempoFeito());
         existente.setObservacao(treino.getObservacao());

@@ -6,8 +6,11 @@ public class TreinoMapper {
         if (entity == null) return null;
         TreinoDto dto = new TreinoDto();
         dto.setId(entity.getId());
+        dto.setNome(entity.getNome());
+        dto.setTipo(entity.getTipo());
         dto.setData(entity.getData());
-        dto.setRepeticao(entity.getRepeticao());
+        dto.setRepeticaoEstimada(entity.getRepeticaoEstimada());
+        dto.setRepeticaoFeita(entity.getRepeticaoFeita());
         dto.setTempoEstimado(entity.getTempoEstimado());
         dto.setTempoFeito(entity.getTempoFeito());
         dto.setObservacao(entity.getObservacao());
@@ -18,8 +21,11 @@ public class TreinoMapper {
         if (dto == null) return null;
         Treino entity = new Treino();
         entity.setId(dto.getId());
+        entity.setNome(dto.getNome());
+        entity.setTipo(dto.getTipo());
         entity.setData(dto.getData());
-        entity.setRepeticao(dto.getRepeticao());
+        entity.setRepeticaoEstimada(dto.getRepeticaoEstimada());
+        entity.setRepeticaoFeita(dto.getRepeticaoFeita());
         entity.setTempoEstimado(dto.getTempoEstimado());
         entity.setTempoFeito(dto.getTempoFeito());
         entity.setObservacao(dto.getObservacao());

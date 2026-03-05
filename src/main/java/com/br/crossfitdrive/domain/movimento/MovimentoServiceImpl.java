@@ -35,7 +35,8 @@ public class MovimentoServiceImpl implements MovimentoService {
                 .orElseThrow(() -> new RuntimeException("Movimento não encontrado"));
 
         movimento.setNome(movimentoAtualizado.getNome());
-        movimento.setUnidadeMedida(movimentoAtualizado.getUnidadeMedida());
+        movimento.setDescricao(movimentoAtualizado.getDescricao());
+        movimento.setTipo(movimentoAtualizado.getTipo());
         return repository.save(movimento);
     }
 

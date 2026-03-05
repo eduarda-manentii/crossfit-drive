@@ -18,8 +18,10 @@ public class Movimento {
     @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "unidade_medida", nullable = false)
-    private UnidadeMedida unidadeMedida;
+    @Column(name = "descricao", nullable = false)
+    private String descricao;
+
+    @Column(name = "tipo", nullable = false)
+    private String tipo;
 
 }
