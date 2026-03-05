@@ -31,7 +31,7 @@ public class ItemMovimento {
     @Column(name = "repeticao", nullable = false)
     private Integer repeticao;
 
-    @Column(name = "observacao", nullable = false)
-    private String observacao;
+    @Column(name = "unidade_medida", nullable = false)
+    private String unidadeMedida;
 
 }

@@ -12,5 +12,6 @@ public class ItemMovimentoDto {
     private String carga;
     private Integer repeticao;
     private String observacao;
+    private String unidadaMedida;
 
 }

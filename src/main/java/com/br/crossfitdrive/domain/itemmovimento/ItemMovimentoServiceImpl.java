@@ -47,7 +47,7 @@ public class ItemMovimentoServiceImpl implements ItemMovimentoService {
                 .orElseThrow(() -> new RuntimeException("ItemMovimento não encontrado"));
         item.setCarga(itemAtualizado.getCarga());
         item.setRepeticao(itemAtualizado.getRepeticao());
-        item.setObservacao(itemAtualizado.getObservacao());
+        item.setUnidadeMedida(itemAtualizado.getUnidadeMedida());
         return repository.save(item);
     }
 
