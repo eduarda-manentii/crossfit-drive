@@ -13,15 +13,16 @@ import lombok.Setter;
 public class Movimento {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "nome", nullable = false)
     private String nome;
 
-    @Column(name = "descricao", nullable = false)
-    private String descricao;
-
     @Column(name = "tipo", nullable = false)
     private String tipo;
+
+    @Column(name = "descricao")
+    private String descricao;
 
 }

@@ -15,6 +15,7 @@ import lombok.Setter;
 public class ItemMovimento {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
