@@ -1,5 +1,6 @@
 package com.br.crossfitdrive.domain.treino;
 
+import com.br.crossfitdrive.config.S3Service;
 import com.br.crossfitdrive.domain.itemmovimento.ItemMovimento;
 import com.br.crossfitdrive.domain.itemmovimento.ItemMovimentoMapper;
 import com.br.crossfitdrive.domain.itemmovimento.ItemMovimentoService;
@@ -17,55 +18,42 @@ public class TreinoComponent {
     private final TreinoService service;
     private final ItemMovimentoService itemService;
     private final MovimentoService movimentoService;
+    private final S3Service s3Service;
 
     public TreinoComponent(
             TreinoService service,
             ItemMovimentoService itemService,
-            MovimentoService movimentoService) {
+            MovimentoService movimentoService, S3Service s3Service) {
 
         this.service = service;
         this.itemService = itemService;
         this.movimentoService = movimentoService;
+        this.s3Service = s3Service;
     }
 
     public TreinoDto salvar(TreinoDto dto) {
-
         Treino entity = TreinoMapper.toEntity(dto);
-
         Treino treinoSalvo = service.salvar(entity);
-
         if (dto.getMovimentos() != null) {
-
             dto.getMovimentos().forEach(m -> {
-
                 ItemMovimento item = new ItemMovimento();
-
                 item.setTreino(treinoSalvo);
-
                 Movimento movimento = new Movimento();
                 movimento.setId(m.getMovimentoId());
-
                 item.setMovimento(movimento);
                 item.setRepeticao(m.getRepeticao());
                 item.setCarga(m.getCarga());
                 item.setUnidadeMedida(m.getUnidadeMedida());
-
                 itemService.salvar(item);
             });
         }
-
-        // 👇 BUSCA OS MOVIMENTOS DO TREINO
         List<ItemMovimento> itens = itemService.buscarPorTreino(treinoSalvo.getId());
-
         TreinoDto response = TreinoMapper.toDto(treinoSalvo);
-
-        // 👇 COLOCA NO DTO
         response.setMovimentos(
                 itens.stream()
                         .map(ItemMovimentoMapper::toDto)
                         .toList()
         );
-
         return response;
     }
 
@@ -88,6 +76,12 @@ public class TreinoComponent {
     }
 
     public void deletar(Long id) {
+        TreinoDto treino = buscar(id);
+        String url = treino.getMidiaUrl();
+        if (url != null && !url.isEmpty()) {
+            String key = url.substring(url.lastIndexOf("/") + 1);
+            s3Service.deleteImage(key);
+        }
         service.deletar(id);
     }
 

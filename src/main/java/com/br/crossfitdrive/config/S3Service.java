@@ -51,17 +51,19 @@ public class S3Service {
         }
     }
 
-    public void deleteImage(String fileName) {
+    public void deleteImage(String fileUrlOrKey) {
         try {
+            String key = fileUrlOrKey.contains("/")
+                    ? fileUrlOrKey.substring(fileUrlOrKey.lastIndexOf("/") + 1)
+                    : fileUrlOrKey;
             DeleteObjectRequest deleteObjectRequest = DeleteObjectRequest.builder()
                     .bucket(bucketName)
-                    .key(fileName)
+                    .key(key)
                     .build();
-
             s3Client.deleteObject(deleteObjectRequest);
-
         } catch (S3Exception e) {
             throw new RuntimeException("Erro na AWS S3 ao deletar arquivo: " + e.awsErrorDetails().errorMessage(), e);
         }
     }
+
 }
