@@ -14,6 +14,7 @@ public class TreinoMapper {
         dto.setTempoEstimado(entity.getTempoEstimado());
         dto.setTempoFeito(entity.getTempoFeito());
         dto.setObservacao(entity.getObservacao());
+        dto.setMidiaUrl(entity.getMidiaUrl());
         return dto;
     }
 
@@ -29,6 +30,7 @@ public class TreinoMapper {
         entity.setTempoEstimado(dto.getTempoEstimado());
         entity.setTempoFeito(dto.getTempoFeito());
         entity.setObservacao(dto.getObservacao());
+        entity.setMidiaUrl(dto.getMidiaUrl());
         return entity;
     }
 

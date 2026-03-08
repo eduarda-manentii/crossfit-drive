@@ -21,7 +21,7 @@ public class ItemMovimentoMapper {
         );
         dto.setCarga(entity.getCarga());
         dto.setRepeticao(entity.getRepeticao());
-        dto.setUnidadaMedida(entity.getUnidadeMedida());
+        dto.setUnidadeMedida(entity.getUnidadeMedida());
         return dto;
     }
 
@@ -44,7 +44,7 @@ public class ItemMovimentoMapper {
         }
         entity.setCarga(dto.getCarga());
         entity.setRepeticao(dto.getRepeticao());
-        entity.setUnidadeMedida(dto.getUnidadaMedida());
+        entity.setUnidadeMedida(dto.getUnidadeMedida());
         return entity;
     }
 

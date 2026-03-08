@@ -27,7 +27,7 @@ public class ItemMovimento {
     private Movimento movimento;
 
     @Column(name = "carga", nullable = false)
-    private String carga;
+    private Double carga;
 
     @Column(name = "repeticao", nullable = false)
     private Integer repeticao;

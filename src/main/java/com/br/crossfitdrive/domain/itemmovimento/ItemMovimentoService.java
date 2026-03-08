@@ -12,4 +12,6 @@ public interface ItemMovimentoService {
 
     void deletar(Long id);
 
+    List<ItemMovimento> buscarPorTreino(Long treinoId);
+
 }

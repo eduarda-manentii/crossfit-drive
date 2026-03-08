@@ -1,11 +1,13 @@
 package com.br.crossfitdrive.domain.treino;
 
+import com.br.crossfitdrive.domain.itemmovimento.ItemMovimento;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -41,5 +43,11 @@ public class Treino {
 
     @Column(name = "observacao")
     private String observacao;
+
+    @OneToMany(mappedBy = "treino", cascade = CascadeType.ALL)
+    private List<ItemMovimento> movimentos;
+
+    @Column(name = "midia_url")
+    private String midiaUrl;
 
 }

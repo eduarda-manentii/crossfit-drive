@@ -9,9 +9,9 @@ public class ItemMovimentoDto {
     private Long treinoId;
     private Long movimentoId;
 
-    private String carga;
+    private Double carga;
     private Integer repeticao;
     private String observacao;
-    private String unidadaMedida;
+    private String unidadeMedida;
 
 }

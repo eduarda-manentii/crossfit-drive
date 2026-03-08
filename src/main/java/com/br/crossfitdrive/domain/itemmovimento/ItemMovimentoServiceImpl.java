@@ -59,4 +59,9 @@ public class ItemMovimentoServiceImpl implements ItemMovimentoService {
         repository.deleteById(id);
     }
 
+    @Override
+    public List<ItemMovimento> buscarPorTreino(Long treinoId) {
+        return repository.findByTreino_Id(treinoId);
+    }
+
 }
