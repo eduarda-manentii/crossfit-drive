@@ -1,13 +1,13 @@
-package com.br.crossfitdrive;
+package com.br.pedido;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CrossfitDriveApplication {
+public class PedidoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CrossfitDriveApplication.class, args);
+        SpringApplication.run(PedidoApplication.class, args);
     }
 
 }

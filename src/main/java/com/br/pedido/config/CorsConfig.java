@@ -1,4 +1,4 @@
-package com.br.crossfitdrive.config;
+package com.br.pedido.config;
 
 import org.jspecify.annotations.NonNull;
 import org.springframework.context.annotation.Bean;

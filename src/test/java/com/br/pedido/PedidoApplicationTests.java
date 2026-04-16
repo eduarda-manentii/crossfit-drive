@@ -1,10 +1,10 @@
-package com.br.crossfitdrive;
+package com.br.pedido;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CrossfitDriveApplicationTests {
+class PedidoApplicationTests {
 
     @Test
     void contextLoads() {
